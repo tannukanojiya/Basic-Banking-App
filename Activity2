@@ -1,0 +1,169 @@
+package com.tannu.acitivitylifecycle
+
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+
+class LoginActivity : AppCompatActivity() {
+
+    lateinit var etMobileNumber: EditText
+    lateinit var etPassword: EditText
+    lateinit var btnLogin: Button
+    lateinit var txtForgotPassword: TextView
+    lateinit var txtRegister: TextView
+    val ValidmobileNumber = "0123456789"
+    val Validpassword = arrayOf("tony", "steve", "t'challa", "thanos")
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_login)
+
+        title = "Avengers Banking App"
+
+        etMobileNumber = findViewById(R.id.etMobileNumber)
+        etPassword = findViewById(R.id.etPassword)
+        btnLogin = findViewById(R.id.btnLogin)
+        txtForgotPassword = findViewById(R.id.txtForgetPassword)
+        txtRegister = findViewById(R.id.txtRegister)
+
+
+        btnLogin.setOnClickListener {
+
+            val mobileNumber = etMobileNumber.text.toString()
+            val password = etPassword.text.toString()
+            var nameofAvenger = "Avenger"
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+
+
+
+            if ((mobileNumber == ValidmobileNumber)) {
+                if (password == Validpassword[0]) {
+
+
+                    nameofAvenger = "Iron Man "
+                    intent.putExtra("Name", nameofAvenger)
+                    startActivity(intent)
+
+                } else if (password == Validpassword[1]) {
+
+
+                    nameofAvenger = "Caption America"
+                    intent.putExtra("Name", nameofAvenger)
+                    startActivity(intent)
+
+                } else if (password == Validpassword[2]) {
+
+
+                    nameofAvenger = "Black Panther"
+                    intent.putExtra("Name", nameofAvenger)
+                    startActivity(intent)
+
+                } else if (password == Validpassword[3]) {
+
+                    nameofAvenger = "The Avengers"
+                    intent.putExtra("Name", nameofAvenger)
+                    startActivity(intent)
+                }
+
+
+            } else {
+
+                Toast.makeText(this@LoginActivity, "Incorrect Credentials", Toast.LENGTH_LONG)
+                    .show()
+            }
+
+        }
+    }
+}
+
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="240dp"
+        android:layout_height="100dp"
+        android:src="@drawable/photo_bank"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:id="@+id/etMobileNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:padding="6dp"
+        android:layout_below="@+id/imgLogo"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:maxLines="1"
+        android:hint="@string/mobile_number"/>
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:padding="6dp"
+        android:layout_below="@+id/etMobileNumber"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:hint="@string/password"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:padding="6dp"
+        android:layout_below="@+id/etPassword"
+        android:background="@color/black"
+        android:text="@string/log_in"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:id="@+id/txtForgetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forget_password"
+        android:layout_below="@id/btnLogin"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:padding="6dp"/>
+
+    <TextView
+        android:id="@+id/txtRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_yourself"
+        android:textSize="16sp"
+        android:padding="6dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
