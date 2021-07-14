@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewActivity2">
+
+    <ImageView
+        android:id="@+id/imgTonyStark"
+        android:layout_width="240dp"
+        android:layout_height="100dp"
+        android:src="@drawable/tony_stark"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: Tony Stark"
+        android:layout_below="@+id/imgTonyStark"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:padding="6dp"/>
+
+    <TextView
+        android:id="@+id/txtAccountNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account Number: 1236547825"
+        android:textSize="16sp"
+        android:padding="6dp"
+        android:layout_below="@id/txtName"
+        android:layout_marginBottom="30dp" />
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAccountNumber"
+        android:layout_marginTop="4dp"
+        android:padding="6dp"
+        android:text="Email I'd: tony@starkIndustries.com"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/txtIfSc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IFSC Code : 123987456"
+        android:textSize="16sp"
+        android:padding="6dp"
+        android:layout_below="@id/txtEmail"
+        android:layout_marginBottom="30dp" />
+    <TextView
+        android:id="@+id/txtMobileNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile Number : 1237895420"
+        android:textSize="16sp"
+        android:padding="6dp"
+        android:layout_below="@id/txtIfSc"
+        android:layout_marginBottom="30dp" />
+    <TextView
+        android:id="@+id/txtCurrentbalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Balance: 7879/-"
+        android:textSize="16sp"
+        android:padding="6dp"
+        android:layout_below="@id/txtMobileNumber"
+        android:layout_marginBottom="30dp" />
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:padding="6dp"
+        android:layout_below="@+id/txtCurrentbalance"
+        android:background="@color/black"
+        android:text="Transfer"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"/>
+
+
+</RelativeLayout>
